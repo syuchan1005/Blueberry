@@ -29,8 +29,8 @@ Top
 
 Image Viewer
 
-![Image Viewer](https://raw.githubusercontent.com/syuchan1005/Blueberry/master/screenshots/Image Viewer.png)
+![Image Viewer](https://raw.githubusercontent.com/syuchan1005/Blueberry/master/screenshots/Image%20Viewer.png)
 
 Video Player
 
-![Video Player](https://raw.githubusercontent.com/syuchan1005/Blueberry/master/screenshots/Video Player.png)
+![Video Player](https://raw.githubusercontent.com/syuchan1005/Blueberry/master/screenshots/Video%20Player.png)
