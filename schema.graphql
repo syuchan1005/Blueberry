@@ -1,0 +1,66 @@
+scalar Milliseconds
+
+type Album {
+  id: Int!
+  title: String!
+  count: Int!
+  source: [String!]!
+  public: Boolean!
+}
+
+type GeneralAlbum {
+  allCount: Int!
+  publicCount: Int!
+  starredCount: Int!
+  allSource: [String!]!
+  publicSource: [String!]!
+  starredSource: [String!]!
+}
+
+enum AlbumType {
+  PUBLIC
+  USER
+}
+
+enum GeneralType {
+  Unsorted
+  Public
+  Starred
+  Recent
+}
+
+type Photo {
+  id: Int!
+  title: String!
+  date: Milliseconds!
+  mime: String!
+  starred: Boolean!
+  public: Boolean!
+  uploaded: Milliseconds!
+  size: String!
+  resolution: String!
+  albumId: Int
+}
+
+type mutationResult {
+  success: Boolean!
+}
+
+type Query {
+  generalAlbum(limit: Int = 3): GeneralAlbum!
+
+  albums(type: AlbumType = PUBLIC): [Album!]!
+  album(albumId: Int!): Album
+
+  photos(type: AlbumType = PUBLIC limit: Int = 15 albumId: Int general: GeneralType): [Photo!]!
+  photo(photoId: Int!): Photo
+}
+
+type Mutation {
+  createAlbum(title: String! public: Boolean = false): Album
+  changeAlbum(albumId: Int! title: String public: Boolean): mutationResult
+  removeAlbum(albumId: Int!): mutationResult
+
+  changePhoto(photoId: Int! title: String public: Boolean starred: Boolean albumId: Int): mutationResult
+  removePhoto(photoId: Int!): mutationResult
+}
